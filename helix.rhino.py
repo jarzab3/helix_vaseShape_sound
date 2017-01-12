@@ -64,19 +64,19 @@ curves = []
 def fun(rad, inp):
     pos = 0
     p = 0
-    inc = 0.18
+    inc = 0.175
     z = 12
     
     a = (round((20*pi), 4))
     b = (round((pi/70), 4))
     
     for a in rs.frange(0.0, a, b):
-        if (len(spheres)) < 150:
-            inc = 0.1
+        if (len(spheres)) < 65:
+            inc = 0.055
         elif (len(spheres)) > 1250:
-            inc = 0.1
+            inc = 0.03
         else:
-            inc = 0.18
+            inc = 0.175
             
         x = rad * math.sin(a + pi)
         y = rad * math.cos(a + pi)
@@ -98,9 +98,10 @@ def fun(rad, inp):
              
         pos += 1
         z += inc
-    print (len(spheres))
+    
     return ""
 
+print (len(spheres))
 
 curves_list = []
 def make_curves(z):
@@ -131,13 +132,13 @@ def make_curves(z):
 
 
 make_curves(0)
-make_curves(235)
+make_curves(257)
 
 base_point = (0,0,0)
 
 base_extr = rs.ExtrudeCurvePoint(curves_list[0], base_point)
 
-top_point = (0,0, 235)
+top_point = (0,0, 257)
 top_extr = rs.ExtrudeCurvePoint(curves_list[1], top_point)
 
 data = prepare_data()
