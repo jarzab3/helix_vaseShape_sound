@@ -65,20 +65,19 @@ def fun(rad, inp):
     pos = 0
     p = 0
     inc = 0.18
-    z = 15
+    z = 12
     
     a = (round((20*pi), 4))
     b = (round((pi/70), 4))
     
-    if (len(spheres)) < 150:
-        inc = 0.1
-
-    elif (len(spheres)) > 1250:
-        inc = 0.1
-    else:
-        inc = 0.18
-
     for a in rs.frange(0.0, a, b):
+        if (len(spheres)) < 150:
+            inc = 0.1
+        elif (len(spheres)) > 1250:
+            inc = 0.1
+        else:
+            inc = 0.18
+            
         x = rad * math.sin(a + pi)
         y = rad * math.cos(a + pi)
         
